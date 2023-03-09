@@ -1,605 +1,364 @@
 :root {
-
     --primary: #D22B3B;
-
     --danger: #dc3545;
-
     --success: #198754;
-
     --dark: #212529;
-
 }
 
 ::selection {
-
     background-color: var(--primary);
-
     color: white;
-
 }
 
 ::-moz-selection {
-
     background-color: var(--primary);
-
     color: white;
-
 }
 
-/* {
-
- border: 1px solid black !important;
-
-}*/
+.wrap {
+    overflow-x: hidden !important;
+}
 
 /*---Custom Components---*/
-
 .btn {
-
     border-radius: 4px !important;
-
     position: relative;
-
     border: none !important;
-
     padding: 6px 20px !important;
-
 }
 
 .input-group .btn {
-
     border-radius: 0 4px 4px 0 !important;
-
 }
 
 .btn:hover::before {
-
     content: "";
-
     width: 100%;
-
     height: 100%;
-
     top: 0;
-
     left: 0;
-
     border-radius: 4px;
-
     position: absolute;
-
     background-color: rgba(0, 0, 0, 0.1);
-
 }
 
 .btn:hover {
-
-    box-shadow: 0 0 0 4px rgba(21, 71, 214, 0.3) !important;
-
+    box-shadow: 0 0 0 4px rgba(210, 43, 59, 0.3) !important;
 }
 
 .btn-primary {
-
     background-color: var(--primary) !important;
-
 }
 
 .btn-outline-primary {
-
     border: 1px solid var(--primary) !important;
-
     padding: 6px 20px !important;
-
     color: var(--primary) !important;
-
     font-weight: 400 !important;
-
 }
 
 .btn-outline-primary:hover {
-
     background-color: var(--primary) !important;
-
     color: white !important;
-
 }
 
 .btn-light:hover {
-
     box-shadow: none !important;
-
 }
 
 .toast {
-
     position: fixed;
-
     bottom: 20px;
-
     right: 20px !important;
-
     z-index: 9999;
-
 }
 
 .toast-success {
-
     border: 1px solid var(--success) !important;
-
 }
 
 .toast-danger {
-
     border: 1px solid var(--danger) !important;
-
 }
 
 body[data-bs-theme="dark"] .input-primary {
-
     background-color: var(--dark);
-
     color: white;
-
 }
 
 body[data-bs-theme="dark"] .btn-light {
-
     background-color: var(--dark);
-
 }
 
 .input-primary {
-
     border-radius: 4px !important;
-
 }
 
 .input-primary:focus {
-
     border: 1px solid transparent !important;
-
     box-shadow: 0 0 0 3px rgba(21, 71, 214, 0.4) !important;
-
 }
 
 .input-primary:hover {
-
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
-
 }
 
 .text-primary {
-
     color: var(--primary) !important;
-
 }
 
 section[id],
-
 section[class] {
-
     margin-top: 100px;
-
 }
 
 section#home,
-
 section.hero {
-
     margin-top: 0;
-
 }
 
+.img-profile {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+    background-color: #eee;
+    border-radius: 50%;
+}
 /*---End---*/
 
 .navbar {
-
     background-color: rgba(255, 255, 255, 0.1);
-
     backdrop-filter: blur(2px);
-
     /*box-shadow: 0 5px 20px rgba(0, 0, 0, .1) !important;*/
-
 }
 
 .navbar-toggler {
-
     box-shadow: none !important;
-
     border: none !important;
-
 }
 
 .active {
-
     color: var(--primary) !important;
-
 }
 
 .nav-link {
-
     position: relative;
-
     transition: 0.4s;
-
 }
 
 .nav-link:hover {
-
     color: var(--primary) !important;
-
 }
 
 .navbar .nav-link {
-
     background: none !important;
-
 }
 
 .navbar .nav-link::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: 3px;
-
     height: 3px;
-
     width: 100%;
-
     background-color: var(--primary);
-
     transform: scaleX(0) translateX(-50px);
-
     transition: 0.4s;
-
 }
 
 .navbar .nav-link:hover::after {
-
     transform: scaleX(0.6);
-
 }
 
 footer {
-
     margin-top: 200px;
-
 }
 
 /*---Halaman Home---*/
-
 .hero {
-
     min-height: 100vh;
-
     position: relative;
-
     overflow: hidden;
-
 }
 
 .hero .row {
-
     z-index: 900 !important;
-
 }
 
 .hero::before {
-
     content: "";
-
     width: 20vw;
-
     height: 20vw;
-
     background-color: var(--primary);
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     filter: blur(100px);
-
 }
 
 .hero::after {
-
     content: "";
-
     width: 20vw;
-
     height: 20vw;
-
     background-color: var(--primary);
-
     position: absolute;
-
     bottom: 0;
-
     right: 0;
-
     filter: blur(100px);
-
 }
 
 .float {
-
-    animation: float 5s linear alternate infinite;
-
+    animation: float 5s ease-out infinite;
 }
 
 @keyframes float {
-
-    1% {
-
-        transform: translateY(0);
-
-    }
-
-    
-
     50% {
-
         transform: translateY(-20px);
-
     }
-
-    
-
-    100% {
-
-        transform: translateY(20px);
-
-    }
-
 }
-
 /*---End---*/
 
 /*---Halaman Piket---*/
-
 #piket .input-primary {
-
     border-radius: 4px 0 0 4px !important;
-
 }
 
 #piket .table .btn {
-
     padding: 5px !important;
-
 }
-
 /*---End---*/
 
 /*---Form Piket*/
-
 section#form-piket {
-
     margin-top: 80px !important;
-
 }
 
 #form-piket .card {
-
     border: none !important;
-
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1) !important;
-
 }
-
 /*---End---*/
 
 /*Halaman Dashboard*/
-
 .sidebar {
-
     position: fixed;
-
     width: 65px;
-
     top: 0;
-
     left: 0;
-
     height: 100vh;
-
     transition: 0.3s;
-
     z-index: 9999;
-
     border-right: 1px solid #444;
-
 }
 
 .sidebar h1 {
-
     display: none;
-
     opacity: 0;
-
 }
 
 .sidebar .sidebar-desc {
-
     display: none;
-
     opacity: 0;
-
 }
 
 .sidebar.active {
-
     width: 25%;
-
 }
 
 .sidebar.active h1 {
-
     display: block;
-
     opacity: 1;
-
 }
 
 .sidebar.active .sidebar-desc {
-
     display: block;
-
     opacity: 1;
-
 }
 
 #dashboard .nav-link {
-
     color: white;
-
     padding: 15px 20px;
-
 }
 
 #dashboard h1 {
-
     padding: 20px !important;
-
 }
 
 #dashboard .nav-link:hover {
-
     background-color: #222 !important;
-
     color: #eee !important;
-
 }
 
 #dashboard .navbar-toggler {
-
     padding: 20px;
-
     transition: 0.3s;
-
 }
 
 #dashboard .navbar-toggler:hover {
-
     background-color: #222 !important;
-
 }
 
 .btn-back {
-
     position: absolute;
-
     bottom: 0;
-
 }
-
 /*---End---*/
 
 /*--Login---*/
-
 #login .card {
-
     border: none !important;
-
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1) !important;
-
 }
-
 /*---End---*/
 
 /*---Log---*/
-
 .table-scrol {
-
     max-height: 65vh;
-
     overflow-y: scroll;
-
 }
-
 /*---End---*/
 
 @media (max-width: 800px) {
-
     section.hero {
-
         padding-top: 100px;
-
     }
-
 }
 
 @media (max-width: 560px) {
-
     section.hero {
-
         padding-top: 100px;
-
     }
-
     .nav-link:hover {
-
         background-color: #eee;
-
     }
 
     .nav-link::after {
-
         width: 0;
-
     }
 
     .sidebar {
-
         height: 65px;
-
         border: 1px solid #444;
-
     }
 
     .sidebar .nav-link i {
-
         display: none;
-
     }
 
     .sidebar a.nav-link {
-
         display: none !important;
-
     }
 
     .sidebar.active a.nav-link {
-
         display: flex !important;
-
     }
 
     .sidebar.active .nav-link i {
-
         display: block;
-
     }
 
     .sidebar.active {
-
         width: 80%;
-
         min-height: 92vh;
-
     }
-
-    /*	.container {
-
-  padding: 0 30px !important;
-
- }*/
-
 }
