@@ -22,9 +22,9 @@ if(!defined("ACCESS")) {
 				</li>
 				<li class="nav-item">
 				    <?php if ($q->login === true) { ?>
-                        <a href="index.php?page=detail-akun&u=<?=$q->username?>" class="btn btn-dark form-control"><i><img src="assets/feather/user.svg" alt=""></i> <?=$q->user?></a>
+                        <a href="index.php?page=detail-akun&u=<?=md5($q->username)?>" class="btn btn-dark form-control"><i><img src="assets/feather/user.svg" alt="User icon profile"></i> <?=$q->user?></a>
 				    <?php } else { ?>
-				    	<a class="btn btn-primary form-control" href="index.php?page=login"><i><img src="assets/feather/log-in.svg" alt=""></i> Login</a>
+				    	<a class="btn btn-primary form-control" href="index.php?page=login"><i><img src="assets/feather/log-in.svg" alt="Login icon"></i> Login</a>
 					<?php } ?>
 				</li>
 			</ul>
