@@ -36,10 +36,10 @@ if (isset($_POST["login"])) {
 							<label for="password">Password</label>
 							<div class="input-group mb-3">
 								<input type="password" class="form-control input-primary" placeholder="Password" id="password" name="password" aria-describedby="basic-addon">
-								<button type="button" class="input-group-text" onclick="pass()" id="basic-addon2"><i><img src="assets/feather/eye.svg" alt=""></i></button>
+								<button type="button" class="input-group-text" onclick="pass()" id="basic-addon2"><i><img src="assets/feather/eye.svg" alt="Eye icon"></i></button>
 							</div>
 							<p class="mt-1 mb-0 text-danger"><?=(!empty($q->msg)) ? $q->msg : ""?></p>
-							<button type="submit" name="login" class="btn btn-primary mt-1 form-control"><i><img src="assets/feather/log-in.svg" alt=""></i> Login</button>
+							<button type="submit" name="login" class="btn btn-primary mt-1 form-control">Kirim</button>
 						</form>
 					</div>
 				</div>

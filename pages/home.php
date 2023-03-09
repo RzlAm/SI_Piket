@@ -8,14 +8,14 @@
 					<div class="container px-0">
 						<div class="row">
 							<div class="col d-flex gap-2">
-								<a href="" class="btn btn-primary rounded-0">Lihat Jadwal</a>
-								<a href="" class="btn btn-outline-primary rounded-0">Lihat Piket</a>
+								<a href="index.php?page=jadwal" class="btn btn-primary rounded-0">Lihat Jadwal</a>
+								<a href="index.php?page=piket" class="btn btn-outline-primary rounded-0">Lihat Piket</a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6" style="z-index: 900;">
-					<img src="assets/images/sipiket.svg" class="float" alt="">
+					<img src="assets/images/sipiket.svg" class="float" alt="Data ilustration by storyset.com">
 				</div>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<div class="row align-items-center pb-5">
 				<h2 class="mb-5 fs-4" data-aos="zoom-in">About</h2>
 				<div class="col-md-4 mb-5 mb-md-0" data-aos="fade-right">
-					<img src="assets/images/jadwal-piket.jpg" class="img-fluid" alt="">
+					<img src="assets/images/jadwal-piket.jpg" class="img-fluid" alt="jadwal piket kelas X TJKT 2">
 				</div>
 				<div class="col-md-8">
 					<p data-aos="fade-left"><b>Apa itu piket?</b> <br> Piket adalah sebuah kegiatan yang telah ditentukan oleh jadwal yang biasanya kegiatannya tentang membersihkan sebuah kelas. Namun tugas piket bukan sebatas itu, salah satu tugas lainnya adalah meminjam buku paket dari perpustakaan untuk satu kelas disaat sedang pelajarannya.</p>
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 mt-5 mt-md-0" data-aos="fade-left">
-					<img src="assets/images/logo-tjkt.png" class="img-fluid" alt="">
+					<img src="assets/images/logo-tjkt.png" class="img-fluid" alt="logo TJKT">
 				</div>
 			</div>
 		</div>

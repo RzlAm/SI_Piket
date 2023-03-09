@@ -45,7 +45,7 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
 					</div>
 				</div>
 				<canvas id="chart"></canvas>
-				<a href="" class="btn mt-5 btn-primary"><i><img src="assets/feather/share.svg" alt=""></i> Bagikan Gambar</a>
+				<a href="" class="btn mt-5 btn-primary"><i><img src="assets/feather/share.svg" alt="Share icon"></i> Bagikan Gambar</a>
 				<div class="container mt-5">
 					<div class="row">
 						<h1 class="fs-4" style="margin-bottom: -20px !important; margin-left: -13px;">Statistic Lanjutan</h1>
@@ -70,7 +70,7 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
                     	</table>
 					</div>
 				</div>
-				<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt=""></i> Print Data</a>
+				<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt="Printer icon"></i> Print Data</a>
 			</div>
 		</div>
 		

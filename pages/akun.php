@@ -34,8 +34,8 @@ $q->select("SELECT * FROM tbl_users ORDER BY id ASC");
 							<td>02-23-2023, 18:00</td>
 							<td>Online</td>
 							<td>
-								<a href="index.php?page=dashboard&q=form-daftar&id=<?=md5($row->id)?>" class="btn btn-light"><i><img src="assets/feather/edit.svg" alt=""></i></a>
-								<a href="index.php?page=hapus&data=akun&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt=""></i></a>
+								<a href="index.php?page=dashboard&q=form-daftar&id=<?=md5($row->id)?>" class="btn btn-light"><i><img src="assets/feather/edit.svg" alt="Edit icon"></i></a>
+								<a href="index.php?page=hapus&data=akun&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt="Trash icon"></i></a>
 							</td>
 						</tr>
 					<?php endwhile;?>
@@ -43,7 +43,7 @@ $q->select("SELECT * FROM tbl_users ORDER BY id ASC");
 			</table>
 		</div>
 	<a href="index.php?page=dashboard&q=form-daftar" class="btn mt-3 btn-outline-primary">Tambah</a>
-	<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt=""></i> Print Data</a>
+	<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt="Printer icon"></i> Print Data</a>
 	</div>
 </section>
 <script>
