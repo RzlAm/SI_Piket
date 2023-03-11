@@ -39,7 +39,7 @@ $q->select("SELECT * FROM tbl_log ORDER BY id DESC");
 				</tbody>
 			</table>
 		</div>
-		<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt=""></i> Print Data</a>
+		<a href="" class="btn mt-3 btn-primary"><i><img src="assets/feather/printer.svg" alt="Printer icon"></i> Print Data</a>
     </div>
 </section>
 
