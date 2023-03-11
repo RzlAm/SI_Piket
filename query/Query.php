@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include("database/Connect.php");
 class Query extends Connect {
