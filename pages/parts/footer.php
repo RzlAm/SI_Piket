@@ -14,6 +14,7 @@ if(!defined("ACCESS")) {
 					<li><a href="https://www.php.net" class="nav-link">PHP v8.2</a></li>
 					<li><a href="https://michalsnik.github.io/aos/" class="nav-link">AOS</a></li>
 					<li><a href="https://feathericons.com/" class="nav-link">Feather Icons</a></li>
+					<li><a href="https://www.chartjs.org/" class="nav-link">Chart.js</a></li>
 					<li><a href="https://storyset.com/" class="nav-link">Ilustration by Storyset</a></li>
 				</ul>
 			</div>
@@ -32,6 +33,6 @@ if(!defined("ACCESS")) {
 				</ul>
 			</div>
 		</div>
-		
+
 	</div>
 </footer>
