@@ -19,7 +19,7 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
 					<div class="row">
 						<h1 class="fs-4" style="margin-left: -8px;">Statistic Dasar</h1>
 						<div class="col-md-4 mb-4">
-						<div class="card bg-primary">
+						<div class="card" style="background-color: #2B3BD2 !important">
 						    <div class="card-body text-white">
 							    <h3 class="fs-5">Jumlah Data</h3>
 							    <h4 class="fs-1 text-center mt-4 mb-3"><?=$q->count?></h4>
@@ -27,17 +27,17 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
 						</div>		
 						</div>					
 						<div class="col-md-4 mb-4">
-							<div class="card bg-success">
+							<div class="card" style="background-color: #3BD22B !important">
 							    <div class="card-body text-white">
-								    <h3 class="fs-5">Orang Rajin</h3>
+								    <h3 class="fs-5">Piket</h3>
 								    <h4 class="fs-1 text-center mt-4 mb-3"><?=$q->countR?></h4>
 							    </div>
 							</div>		
 						</div>
 						<div class="col-md-4">
-							<div class="card bg-danger">
+							<div class="card" style="background-color: #D22B3B !important">
 							    <div class="card-body text-white">
-									<h3 class="fs-5">Tidak Rajin</h3>
+									<h3 class="fs-5">Tidak Piket</h3>
 									<h4 class="fs-1 text-center mt-4 mb-3"><?=$q->countT?></h4>
 							    </div>
 							</div>		
@@ -86,13 +86,13 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
 	let chart = new Chart(c, {
 		type: "bar",
 		data:{
-			labels:["Jumlah Data", "Orang Rajin", "Orang Tidak Rajin"],
+			labels:["Jumlah Data", "Piket", "Tidak Piket"],
 			datasets:[{
 				label:"Perbandingan",
 				data:[
 				count, countR, countT],
 				backgroundColor:[
-				"#1b47d6", "#198754", "#dc3545"
+				"#2B3BD2", "#3BD22B", "#D22B3B"
 				]
 			}]
 		}
