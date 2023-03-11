@@ -6,7 +6,7 @@ class Query extends Connect {
     public $result, $msg, $now,
     $count, $countR, $countT,
     $login, $role, $user,
-    $username;
+    $username, $firstName;
     
     public function login($data) {
         $username = htmlspecialchars($data["username"]);
@@ -181,15 +181,28 @@ class Query extends Connect {
         $stmt->bind_param("i", $row);
         $stmt->execute();
     }
+    
+    public function firstName($absen) {
+        $this->select("SELECT * FROM tbl_siswa WHERE absen = $absen");
+        $row = mysqli_fetch_object($this->result);
+        $this->firstName = explode(" ", $row->nama);
+        $this->firstName = $this->firstName[0];
+        return $this->firstName;
+    }
 
     public function addPiket($data) {
         $this->checkrole();
         $re = ($this->role === "admin") ? "dashboard&q=piket" : "piket";
+        
         $hari= htmlspecialchars($data["hari"]);
         $waktu= htmlspecialchars($data["waktu"]);
         $absen= htmlspecialchars($data["absen"]);
         $status= htmlspecialchars($data["status"]);
         $keterangan= htmlspecialchars($data["keterangan"]);
+        
+        $this->firstName($absen);
+        $this->select("SELECT * FROM tbl_siswa WHERE absen = $absen");
+        $row = mysqli_fetch_object($this->result);
         
         $stmt= $this->db->prepare("INSERT INTO tbl_piket(hari, waktu, absen, status, keterangan) VALUES(?, ?, ?, ?, ?)");
         $stmt->bind_param("ssiss", $hari, $waktu, $absen, $status, $keterangan);
@@ -197,12 +210,15 @@ class Query extends Connect {
         if (empty($hari) || empty($waktu) || empty($absen)) {
             $this->msg= "Isi bidang yang kosong!.";
             return $this->msg;
-        } else {
+        } else if ($hari !== $row->hari_piket) {
+            $this->msg= "$this->firstName tidak piket pada hari $hari!.";
+            return $this->msg;
+        }else {
             if ($stmt->execute()) {
                 $this->addlog("Menambahkan data piket [$absen]");
                 $this->addCountPiket($absen, $status);
                 $this->addCountNotPiket($absen, $status);
-                header ("Location: index.php?page=$re&type=success&msg=Data piket baru berhasil ditambahkan.");
+                header("Location: index.php?page=$re&type=success&msg=Data piket baru berhasil ditambahkan.");
             } else {
                 $this->msg= "Data gagal ditambahkan.";
                 return $this->msg;
