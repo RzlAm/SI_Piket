@@ -32,7 +32,7 @@ $q->select("SELECT * FROM tbl_log ORDER BY id DESC");
 							<td><?=$row->nama?></td>
 							<td><?=$row->log?></td>
 							<td>
-								<a href="index.php?page=hapus&data=log&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt=""></i></a>
+								<a href="index.php?page=hapus&data=log&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt="Trash icon"></i></a>
 							</td>
 						</tr>
 					<?php endwhile; ?>
