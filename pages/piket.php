@@ -50,7 +50,7 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 					<td><?=$row->keterangan?></td>
 					<?php if ($q->login === true) { ?>
 					<td>
-						<a href="index.php?page=hapus&data=piket&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt=""></i></a>
+						<a href="index.php?page=hapus&data=piket&id=<?=md5($row->id)?>" onclick="del();" class="btn btn-light"><i><img src="assets/feather/trash-2.svg" alt="Trash icon"></i></a>
 					</td>
 				    <?php } ?>
 				</tr>
