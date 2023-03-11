@@ -10,11 +10,11 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 				<form action="" method="GET">
 					<div class="input-group">
 						<input type="text" class="form-control input-primary" placeholder="Cari berdasarkan tanggal, nama atau keterangan...">
-						<button class="btn btn-primary"><i><img src="assets/feather/search.svg" alt=""></i></button>
+						<button class="btn btn-primary"><i><img src="assets/feather/search.svg" alt="Search icon"></i></button>
 					</div>
 				</form>
 			<?php if ($q->login === true) : ?>
-				<a href="index.php?page=<?=($q->role === 'admin') ? 'dashboard&q=form-piket' : 'form-piket'?>" class="btn btn-primary mt-5"><i><img src="assets/feather/plus.svg" alt=""></i> Tambah</a>
+				<a href="index.php?page=<?=($q->role === 'admin') ? 'dashboard&q=form-piket' : 'form-piket'?>" class="btn btn-primary mt-5"><i><img src="assets/feather/plus.svg" alt="Plus icon"></i> Tambah</a>
 			<?php endif; ?>
 		</div>
 	</div>
@@ -24,7 +24,7 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 				<tr>
 					<td>#</td>
 					<th style="min-width: 160px;">Waktu</th>
-					<th style="min-width: 200px">Nama</th>
+					<th style="min-width: <?=($q->login === true) ? '200' : '110'?>px">Nama</th>
 					<th>Absen</th>
 					<th class="text-center">Status</th>
 					<th style="min-width: 200px;">Keterangan</th>
@@ -34,17 +34,22 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 				</tr>
 			</thead>
 			<tbody>
-				<?php $i = 0; while ($row = mysqli_fetch_object($q->result)) : $i++ ?>
+				<?php $i = 0; while ($row = mysqli_fetch_object($q->result)) : $i++; ?>
 				<tr>
 					<td><?=$i?></td>
 					<td><?=$row->hari?>, <?=$row->waktu?></td>
-					<td><?=$row->nama?></td>
+					<td>
+					<?php
+					$name = explode(" ", $row->nama);
+					echo ($q->login === true) ? $row->nama : $name[0];
+					?>
+					</td>
 					<td class="text-center"><?=$row->absen?></td>
 					<td class="text-center">
 						<?php if ($row->status === "1") { ?>
-							<i class="text-primary"><img src="assets/feather/check.svg" alt=""></i>
+							<i class="text-primary"><img src="assets/feather/check.svg" alt="Check icon"></i>
 						<?php } else { ?>
-							<i class="text-primary"><img src="assets/feather/x.svg" alt=""></i>
+							<i class="text-primary"><img src="assets/feather/x.svg" alt="X icon"></i>
 						<?php } ?>
 					</td>
 					<td><?=$row->keterangan?></td>
