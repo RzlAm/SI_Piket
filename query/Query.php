@@ -45,7 +45,6 @@ class Query extends Connect {
             }
         }
     }
-   
     
     public function logout() {
         $this->addlog("Logout");
@@ -181,6 +180,34 @@ class Query extends Connect {
         $stmt->bind_param("i", $row);
         $stmt->execute();
     }
+    ////
+    public function decCountNotPiket($absen) {
+        $this->select("SELECT jumlah_tidak_piket FROM tbl_siswa WHERE absen = $absen");
+        $row = mysqli_fetch_object($this->result);
+        if ($row->jumlah_tidak_piket > 0) {
+            $row = $row->jumlah_tidak_piket - 1;
+        } else {
+            $row = $row->jumlah_tidak_piket;
+        }
+        
+        $stmt = $this->db->prepare("UPDATE tbl_siswa SET jumlah_tidak_piket = ? WHERE absen = $absen");
+        $stmt->bind_param("i", $row);
+        $stmt->execute();
+    }
+    
+    public function decCountPiket($absen) {
+        $this->select("SELECT jumlah_piket FROM tbl_siswa WHERE absen = $absen");
+        $row = mysqli_fetch_object($this->result);
+        if ($row->jumlah_piket > 0) {
+            $row = $row->jumlah_piket - 1;
+        } else {
+            $row = $row->jumlah_piket;
+        }
+        
+        $stmt = $this->db->prepare("UPDATE tbl_siswa SET jumlah_piket = ? WHERE absen = $absen");
+        $stmt->bind_param("i", $row);
+        $stmt->execute();
+    }
     
     public function firstName($absen) {
         $this->select("SELECT * FROM tbl_siswa WHERE absen = $absen");
@@ -282,12 +309,22 @@ class Query extends Connect {
     public function delete($data, $id) {
         $this->checkRole();
         $re = ($this->role === "admin") ? "dashboard&q=piket" : "piket";
+        $this->select("SELECT * FROM tbl_piket WHERE md5(id) = '$id'");
+        $row = mysqli_fetch_object($this->result);
+        $absen = $row->absen;
+        
         if (empty($data) || empty($id)) {
             header("location: index.php?type=danger&msg=Anda mecoba mengahpus data kosong!.");
         } else if ($data === "piket") {
             $stmt = $this->db->prepare("DELETE FROM tbl_piket WHERE md5(id) = ?");
             $stmt->bind_param("s", $id);
             $this->addlog("Menghapus data piket");
+            if ($row->status === "1") {
+                $this->decCountPiket($absen);
+            } else {
+                $this->decCountNotPiket($absen);
+            }
+            
             ($stmt->execute()) ? header("location: index.php?page=$re&type=success&msg=Data piket berhasil dihapus!.") : header("location: index.php?page=$re&type=danger&msg=Data piket gagal dihapus!.");
         } else if ($data === "log" && $this->role === "admin") {
             $stmt = $this->db->prepare("DELETE FROM tbl_log WHERE md5(id) = ?");
