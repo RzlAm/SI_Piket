@@ -13,17 +13,62 @@
 			</thead>
 			<tbody>
 				<tr>
-					<?php for ($i = 1; $i <= 5; $i++) : ?>
-						<td>
-							<ol class="ps-3">
-								<li>PABP</li>
-								<li>PJOK</li>
-								<li>S.INDO</li>
-								<li>B.INGGRIS</li>
-								<li>PPKN</li>
-							</ol>
-						</td>
-					<?php endfor; ?>
+					<td>
+						<ol class="ps-3">
+							<li>Alfu</li>
+							<li>Anggi</li>
+							<li>Amel</li>
+							<li>Asinta</li>
+							<li>Bunga</li>
+							<li>Bylla</li>
+							<li>Bayu</li>
+							<li>Dimas</li>
+						</ol>
+					</td>
+				    <td>
+				        <ol>
+				            <li>Desla</li>
+				            <li>Eky</li>
+				            <li>Enggal</li>
+				            <li>Intan</li>
+				            <li>Afi</li>
+				            <li>Fifah</li>
+				            <li>Ilham</li>
+				        </ol>
+				    </td>
+				    <td>
+				        <ol>
+				            <li>Puji</li>
+				            <li>Luthfi</li>
+				            <li>Lulu</li>
+				            <li>Mei</li>
+				            <li>Nandya</li>
+				            <li>Natasyah</li>
+				            <li>Rava</li>
+				        </ol>
+				    </td>
+				    <td>
+				        <ol>
+				            <li>Putri</li>
+				            <li>Reva</li>
+				            <li>Salsa</li>
+				            <li>Salwa</li>
+				            <li>Caca</li>
+				            <li>Sarah</li>
+				            <li>Rifki</li>
+				        </ol>
+				    </td>
+				    <td>
+				        <ol>
+				            <li>Sekar</li>
+				            <li>Syafira</li>
+				            <li>Umi</li>
+				            <li>Veli</li>
+				            <li>Yumna</li>
+				            <li>Zahra</li>
+				            <li>Aminnn</li>
+				        </ol>
+				    </td>
 				</tr>
 			</tbody>
 		</table>

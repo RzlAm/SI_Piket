@@ -52,8 +52,8 @@ echo "<script>let count = $q->count;let countR = $q->countR;let countT = $q->cou
 					<div class="container px-0">
 						<div class="row">
 							<div data-aos="fade-up" data-aos-duration="1100" class="col d-flex gap-2 justify-content-start justify-content-md-start justify-content-lg-start">
-								<a href="../index.php" class="btn btn-primary rounded-0">Lihat website</a>
-            	            </div>
+								<a href="tjkt2.rf.gd/" class="btn btn-primary rounded-0">Lihat website</a>
+	            </div>
 						</div>
 					</div>
 				</div>

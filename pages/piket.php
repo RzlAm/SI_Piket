@@ -1,5 +1,10 @@
 <?php
-$q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl_siswa.absen = tbl_piket.absen ORDER BY tbl_piket.id DESC");
+if (isset($_GET["key"])) {
+    $key = $_GET["key"];
+    $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl_siswa.absen = tbl_piket.absen WHERE tbl_siswa.nama LIKE '%$key%' ORDER BY tbl_piket.id DESC");
+} else {
+    $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl_siswa.absen = tbl_piket.absen ORDER BY tbl_piket.id DESC");
+}
 ?>
 
 <section id="piket">
@@ -9,8 +14,9 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 			<div class="col-12 col-md-10">
 				<form action="" method="GET">
 					<div class="input-group">
-						<input type="text" class="form-control input-primary" placeholder="Cari berdasarkan tanggal, nama atau keterangan...">
-						<button class="btn btn-primary"><i><img src="assets/feather/search.svg" alt="Search icon"></i></button>
+					    <input type="hidden" name="page" value="piket">
+						<input name="key" type="text" class="form-control input-primary" placeholder="Cari berdasarkan nama...">
+						<button type="submit" class="btn btn-primary"><i><img src="assets/feather/search.svg" alt="Search icon"></i></button>
 					</div>
 				</form>
 			<?php if ($q->login === true) : ?>
@@ -19,6 +25,8 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 		</div>
 	</div>
 	<div class="table-responsive mt-4">
+	    <h5><?=(!empty($key)) ? "Hasil pencarian $key" : ""?></h5>
+	    <p><?=(mysqli_num_rows($q->result) === 0) ? "Tidak ada data" : ""?></p>
 		<table class="table table-striped mt-2">
 			<thead>
 				<tr>
@@ -27,8 +35,8 @@ $q->select("SELECT tbl_siswa.*, tbl_piket.* FROM tbl_piket JOIN tbl_siswa ON tbl
 					<th style="min-width: <?=($q->login === true) ? '200' : '110'?>px">Nama</th>
 					<th>Absen</th>
 					<th class="text-center">Status</th>
-					<th style="min-width: 200px;">Keterangan</th>
-	            	<?php if ($q->login === true) { ?>
+					<th style="min-width: 230px;">Keterangan</th>
+		<?php if ($q->login === true) { ?>
 					<th class="text-center">Aksi</th>
 				    <?php } ?>
 				</tr>
